@@ -2,6 +2,8 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WorkboxPlugin = require("workbox-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const CompressionPlugin = require("compression-webpack-plugin");
+const zlib = require("zlib");
 
 module.exports = {
   entry: {
@@ -47,6 +49,18 @@ module.exports = {
         appName: "Matt fowles",
         appDescription: "Matt Fowles",
       },
+    }),
+    new CompressionPlugin({
+      filename: "[path][base].br",
+      algorithm: "brotliCompress",
+      test: /\.(js|css|html|svg)$/,
+      compressionOptions: {
+        params: {
+          [zlib.constants.BROTLI_PARAM_QUALITY]: 11,
+        },
+      },
+      minRatio: 0.8,
+      deleteOriginalAssets: false,
     }),
   ],
   output: {
