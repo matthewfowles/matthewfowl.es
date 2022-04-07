@@ -46,6 +46,10 @@ const Button = styled("button", {
   border: "1px solid $textColor",
   marginLeft: spacing(1),
 
+  "&:disabled": {
+    cursor: "not-allowed",
+  },
+
   variants: {
     active: {
       true: {},
