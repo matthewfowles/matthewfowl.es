@@ -2,29 +2,73 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `portfolio`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `Matt Fowles`,
+    siteUrl: `https://mattfowl.es`,
+    description: "Software Engineer",
   },
-  plugins: ["gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", {
-    resolve: 'gatsby-plugin-manifest',
-    options: {
-      "icon": "src/images/icon.png"
-    }
-  }, "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": "./src/images/"
+  plugins: [
+    "gatsby-plugin-image",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
+    {
+      resolve: `gatsby-plugin-splitbee`,
+      options: {
+        includeInDevelopment: false,
+        delayTimeout: 0,
+        disableCookie: true,
+      },
     },
-    __key: "images"
-  }, {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "pages",
-      "path": "./src/pages/"
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "Matt Fowles",
+        short_name: "Matt Fowles",
+        icon: "src/images/icon.png",
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#444444`,
+        display: `standalone`,
+        icon_options: {
+          purpose: `any maskable`,
+        },
+      },
     },
-    __key: "pages"
-  }]
+    "gatsby-plugin-mdx",
+    {
+      resolve: "gatsby-plugin-sharp",
+      options: {
+        defaults: {
+          quality: 70,
+          formats: ["webp", "avif"],
+          placeholder: "tracedSVG",
+        },
+      },
+    },
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "./src/images/",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: "./src/pages/",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-offline",
+      options: {
+        workboxConfig: {
+          globPatterns: ["**/icon-path*"],
+        },
+      },
+    },
+    `gatsby-plugin-netlify`,
+  ],
 };
 
 export default config;
