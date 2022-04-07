@@ -59,14 +59,7 @@ const config: GatsbyConfig = {
         path: "./src/pages/",
       },
     },
-    {
-      resolve: "gatsby-plugin-offline",
-      options: {
-        workboxConfig: {
-          globPatterns: ["**/icon-path*"],
-        },
-      },
-    },
+    `gatsby-plugin-remove-serviceworker`,
     `gatsby-plugin-netlify`,
     "gatsby-plugin-robots-txt",
   ],
