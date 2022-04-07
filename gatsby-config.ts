@@ -68,6 +68,7 @@ const config: GatsbyConfig = {
       },
     },
     `gatsby-plugin-netlify`,
+    "gatsby-plugin-robots-txt",
   ],
 };
 
