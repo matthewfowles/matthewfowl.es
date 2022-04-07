@@ -160,6 +160,7 @@ const IndexPage = () => {
               }}
               aria-current={theme === "dark"}
               dark
+              disabled={theme === "dark"}
             >
               <MoonIcon width={20} height={20} />
             </Button>
@@ -173,6 +174,7 @@ const IndexPage = () => {
               aria-label="Light Theme"
               aria-current={theme === "light"}
               light
+              disabled={theme === "light"}
             >
               <SunIcon width={20} height={20} />
             </Button>
