@@ -39,6 +39,7 @@ export default function HTML(props) {
           content="https://mattfowl.es/assets/apple-touch-icon-1024x1024.png"
         />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <script async src="https://cdn.splitbee.io/sb.js"></script>
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>

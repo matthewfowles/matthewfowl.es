@@ -154,10 +154,8 @@ const IndexPage = () => {
               active={theme === "dark"}
               onClick={toggleTheme}
               aria-label="Dark Theme"
-              data-splitbee-event={{
-                event: "Change theme",
-                option: "Dark theme",
-              }}
+              data-splitbee-event="Change theme"
+              data-splitbee-event-theme="Dark theme"
               aria-current={theme === "dark"}
               dark
               disabled={theme === "dark"}
@@ -166,10 +164,8 @@ const IndexPage = () => {
             </Button>
             <Button
               active={theme === "light"}
-              data-splitbee-event={{
-                event: "Change theme",
-                option: "Light theme",
-              }}
+              data-splitbee-event="Change theme"
+              data-splitbee-event-theme="Light theme"
               onClick={toggleTheme}
               aria-label="Light Theme"
               aria-current={theme === "light"}
