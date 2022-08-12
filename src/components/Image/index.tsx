@@ -2,14 +2,20 @@ import React, { useMemo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 import PropTypes from "prop-types";
+import { CSS } from "@stitches/react";
+import { styled } from "../../styles/stitches.config";
+
+const ImageElement = styled("img");
 
 const Image = ({
   src,
+  css,
   ...rest
 }: {
   src: string;
   role: string;
   alt: string;
+  css?: CSS;
 }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -29,6 +35,20 @@ const Image = ({
           }
         }
       }
+      notion: allNotion {
+        edges {
+          node {
+            raw {
+              cover {
+                external {
+                  url
+                }
+                type
+              }
+            }
+          }
+        }
+      }
     }
   `);
 
@@ -37,6 +57,13 @@ const Image = ({
       data.images.edges.find(
         ({ node }: { node: { relativePath: string } }) =>
           src === node.relativePath
+      ) ||
+      data.notion.edges.find(
+        ({
+          node,
+        }: {
+          node: { raw: { cover: { external: { url: string } } } };
+        }) => src === node.raw.cover.external.url
       ),
     [data, src]
   );
@@ -54,7 +81,13 @@ const Image = ({
   } = match;
 
   if (extension === "svg" || !childImageSharp) {
-    return <img src={publicURL} {...rest} />;
+    return (
+      <ImageElement
+        css={css}
+        src={publicURL || match?.node?.raw?.cover?.external?.url}
+        {...rest}
+      />
+    );
   }
 
   return <Img loading="eager" fluid={childImageSharp.fluid} {...rest} />;

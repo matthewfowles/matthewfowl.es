@@ -7,6 +7,7 @@ export type LinkProps = {
   children: ReactNode;
   ariaLabel: string;
   eventLabel?: string;
+  inline?: boolean;
 };
 
 const ExternalLink = styled("a", {
@@ -47,6 +48,15 @@ const ExternalLink = styled("a", {
   "&:hover::after, &:focus::before": {
     width: "100%",
   },
+
+  variants: {
+    inline: {
+      true: {
+        minWidth: "auto",
+        margin: 0,
+      },
+    },
+  },
 });
 
 export function Link({
@@ -54,14 +64,17 @@ export function Link({
   children,
   ariaLabel,
   eventLabel = "unregistered event",
+  inline,
 }: LinkProps) {
   return (
     <ExternalLink
       href={href}
       aria-label={ariaLabel}
+      inline={inline}
       target="_blank"
       rel="noopener noreferrer"
-      data-splitbee-event={eventLabel}
+      data-splitbee-event="link"
+      data-splitbee-event-link={eventLabel}
     >
       {children}
     </ExternalLink>

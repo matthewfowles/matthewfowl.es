@@ -19,6 +19,15 @@ const config: GatsbyConfig = {
       },
     },
     {
+      resolve: `gatsby-source-notion-api`,
+      options: {
+        token: `secret_Br0TIgiTIgD0F8NBjcHofbf12kdRIfMZwHTK20ZVE0l`,
+        databaseId: `51030677d2b04c0fbe787e96e47e5f0a`,
+        propsToFrontmatter: true,
+        lowerTitleLevel: true,
+      },
+    },
+    {
       resolve: "gatsby-plugin-manifest",
       options: {
         name: "Matt Fowles",
