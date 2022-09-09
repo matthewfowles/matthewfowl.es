@@ -52,7 +52,7 @@ const Text = styled("span", {
 export type TypographyProps = {
   children: ReactNode;
   align?: "justify" | "left" | "right" | "center";
-  as?: "p" | "h1" | "h2" | StyledComponent;
+  as?: "p" | "h1" | "h2" | "h3" | StyledComponent;
   css?: CSS;
   variant?: "heading1" | "heading2" | "link" | "body";
 };

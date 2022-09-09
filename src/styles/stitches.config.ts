@@ -8,6 +8,7 @@ export const { styled, css, getCssText, globalCss, createTheme } =
         heading: sizing(56),
         subHeading: sizing(28),
         link: sizing(24),
+        info: sizing(20),
         body: sizing(16),
       },
       fontWeights: {

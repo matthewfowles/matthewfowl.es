@@ -35,7 +35,7 @@ const Header = styled("header", {
   alignItems: "center",
   justifyContent: "center",
   flexDirection: "column",
-  padding: `${spacing(4)} ${spacing(2)} 0 ${spacing(2)}`,
+  padding: `${spacing(4)} ${spacing(2)} ${spacing(2)} ${spacing(2)}`,
 });
 
 const Button = styled("button", {
@@ -183,46 +183,35 @@ const IndexPage = () => {
           <Typography align="center" variant="heading1" as="h1">
             Matt Fowles
           </Typography>
+          <Typography
+            align="center"
+            variant="body"
+            as="h3"
+            css={{ marginTop: "-20px" }}
+          >
+            (He / Him, They / Them)
+          </Typography>
+          <Typography align="center" variant="heading2" as="h2">
+            Product Manager & Software Engineer
+          </Typography>
+          <Typography align="center" variant="heading2" as="h2">
+            Remote Worldwide <span role="img">󠁧󠁢🌍</span>
+          </Typography>
         </Header>
         <PillContainer>
           <Pill>
-            Software Engineer <span role="img">🧑‍🔧</span>
+            <span role="img">🔥</span> Startup UX, UI, DX &amp; Engineering
           </Pill>
           <Pill>
-            Manager &amp; Coach <span role="img">👨‍🏫</span>
+            <span role="img">🌱🔪</span> Plant Based Food
           </Pill>
           <Pill>
-            Coder <span role="img">💻</span>
+            <span role="img">⛺🥾⛰</span> Outdoors and nature
           </Pill>
           <Pill>
-            Startup UI &amp; Engineering <span role="img">🔥</span>
-          </Pill>
-          <Pill>
-            Tash's partner <span role="img">🐕</span>
-          </Pill>
-          <Pill>
-            Plant Based <span role="img">🌱</span>
-          </Pill>
-          <Pill>
-            Cook <span role="img">🔪</span>
-          </Pill>
-          <Pill>
-            Hiker <span role="img">🥾</span>
-          </Pill>
-          <Pill>
-            Outdoors lover <span role="img">⛺</span>
-          </Pill>
-          <Pill>
-            Platformer <span role="img">🎮</span>
+            <span role="img">🎮</span> Platformer
           </Pill>
         </PillContainer>
-        <Typography align="center" variant="heading2" as="h2">
-          Busy, but always open to oppurtunities, lets talk (until 2023)
-        </Typography>
-        <Typography align="center" variant="heading2" as="h2">
-          Remote U.K - Hanging out around Edinburgh <span role="img">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>
-          <span role="img">🍻</span>
-        </Typography>
         <Container>
           <Link
             ariaLabel="email"
@@ -280,7 +269,7 @@ const IndexPage = () => {
           </Link>
           <Link
             ariaLabel="Instagram"
-            href="https://www.instagram.com/matthewfowles/"
+            href="https://www.instagram.com/mattfowlesnomad/"
             eventLabel="Instagram Link"
           >
             <Typography align="center" variant="link">
