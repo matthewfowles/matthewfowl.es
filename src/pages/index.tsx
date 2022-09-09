@@ -195,7 +195,7 @@ const IndexPage = () => {
             Product Manager & Software Engineer
           </Typography>
           <Typography align="center" variant="heading2" as="h2">
-            Remote Worldwide <span role="img">󠁧󠁢🌍</span>
+            Digital Nomad, Remote Worldwide <span role="img">󠁧󠁢🌍</span>
           </Typography>
         </Header>
         <PillContainer>
