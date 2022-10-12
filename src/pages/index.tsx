@@ -41,66 +41,13 @@ const Header = styled("header", {
 const Button = styled("button", {
   width: sizing(44),
   height: sizing(44),
-  borderRadius: "$cornered",
+  borderRadius: "$round",
   cursor: "pointer",
-  border: "1px solid $textColor",
   marginLeft: spacing(1),
-
-  "&:disabled": {
-    cursor: "not-allowed",
-  },
-
-  variants: {
-    active: {
-      true: {},
-    },
-    dark: { true: {} },
-    light: { true: {} },
-  },
-
-  compoundVariants: [
-    {
-      dark: true,
-      active: true,
-      light: false,
-      css: {
-        color: "$textColor",
-        background: "$backgroundColor",
-      },
-    },
-    {
-      light: true,
-      active: false,
-      dark: false,
-      css: {
-        background: "$textColor",
-        color: "$backgroundColor",
-      },
-    },
-    {
-      light: true,
-      active: true,
-      dark: false,
-      css: {
-        color: "$textColor",
-        background: "$backgroundColor",
-      },
-    },
-    {
-      dark: true,
-      active: false,
-      light: false,
-      css: {
-        background: "$textColor",
-        color: "$backgroundColor",
-      },
-    },
-  ],
-
-  defaultVariants: {
-    light: false,
-    dark: false,
-  },
+  border: "none",
+  background: "$backgroundColor",
+  color: "$textColor",
+  transition: "none",
 });
 
 const ButtonContainer = styled("div", {
@@ -155,28 +102,13 @@ const IndexPage = () => {
         <Header>
           <ButtonContainer role="group">
             <Button
-              active={theme === "dark"}
               onClick={toggleTheme}
-              aria-label="Dark Theme"
+              aria-label="Change theme"
               data-splitbee-event="Change theme"
-              data-splitbee-event-theme="Dark theme"
-              aria-current={theme === "dark"}
-              dark
-              disabled={theme === "dark"}
+              data-splitbee-event-theme={theme}
             >
-              <MoonIcon width={20} height={20} />
-            </Button>
-            <Button
-              active={theme === "light"}
-              data-splitbee-event="Change theme"
-              data-splitbee-event-theme="Light theme"
-              onClick={toggleTheme}
-              aria-label="Light Theme"
-              aria-current={theme === "light"}
-              light
-              disabled={theme === "light"}
-            >
-              <SunIcon width={20} height={20} />
+              {theme === "dark" && <MoonIcon width={24} height={24} />}
+              {theme === "light" && <SunIcon width={24} height={24} />}
             </Button>
           </ButtonContainer>
           <Avatar />
