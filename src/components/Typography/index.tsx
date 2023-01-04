@@ -3,10 +3,11 @@ import { CSS } from "@stitches/react";
 import { ReactNode } from "react";
 import { styled } from "../../styles/stitches.config";
 import { StyledComponent } from "@stitches/react/types/styled-component";
+import { sizing, spacing } from "../../styles/utils";
 
 const Text = styled("span", {
   fontFamily: "$heading",
-  margin: "8px 0",
+  margin: `${spacing(1)} ${spacing(0)}`,
   color: "$textColor",
   variants: {
     align: {
@@ -30,17 +31,28 @@ const Text = styled("span", {
         letterSpacing: "$body",
       },
       heading1: {
-        fontSize: "$heading",
+        fontSize: sizing(40),
+        lineHeight: "2rem",
+        "@tablet": {
+          fontSize: "$heading",
+          lineHeight: "4rem",
+        },
         fontWeight: "$heading",
         letterSpacing: "$heading",
       },
       heading2: {
-        fontSize: "$subHeading",
+        fontSize: sizing(20),
+        "@tablet": {
+          fontSize: "$subHeading",
+        },
         fontWeight: "$subHeading",
         letterSpacing: "$subHeading",
       },
       link: {
-        fontSize: "$link",
+        fontSize: sizing(20),
+        "@tablet": {
+          fontSize: "$link",
+        },
         fontWeight: "$link",
         letterSpacing: "$link",
         color: "$linkColor",

@@ -7,7 +7,7 @@ const StyledImage = styled(Image, {
   width: sizing(200),
   height: sizing(200),
   borderRadius: "$round",
-  marginBottom: spacing(2),
+  marginBottom: spacing(6),
   boxShadow: "$drop",
 });
 

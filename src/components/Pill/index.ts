@@ -1,11 +1,14 @@
 import { styled } from "../../styles/stitches.config";
-import { spacing } from "../../styles/utils";
+import { sizing, spacing } from "../../styles/utils";
 
 export const Pill = styled("span", {
   padding: `${spacing(0.5)} ${spacing(1)}`,
   display: "inline-block",
   color: "$textColor",
-  fontSize: "$info",
+  fontSize: sizing(18),
+  "@tablet": {
+    fontSize: "$info",
+  },
 });
 
 export const PillContainer = styled("div", {

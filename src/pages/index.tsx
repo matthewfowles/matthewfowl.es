@@ -115,19 +115,25 @@ const IndexPage = () => {
           <Typography align="center" variant="heading1" as="h1">
             Matt Fowles
           </Typography>
-          <Typography
-            align="center"
-            variant="body"
-            as="h3"
-            css={{ marginTop: "-20px" }}
-          >
+          <Typography align="center" variant="body" as="h3">
             (He / Him, They / Them)
+          </Typography>
+          <Typography align="center" variant="heading2" as="h2">
+            Head of Product Experience&nbsp;
+            <Link
+              ariaLabel="Rvvup"
+              eventLabel="Rvvup Link"
+              href="https://rvvup.com"
+              inline
+            >
+              @RVUUP
+            </Link>
           </Typography>
           <Typography align="center" variant="heading2" as="h2">
             Product Manager & Software Engineer
           </Typography>
           <Typography align="center" variant="heading2" as="h2">
-            Digital Nomad, Remote Worldwide <span role="img">󠁧󠁢🌍</span>
+            Digital Nomad, Remote Worldwide <span role="img">󠁧󠁢🌎</span>
           </Typography>
         </Header>
         <PillContainer>
@@ -138,10 +144,22 @@ const IndexPage = () => {
             <span role="img">🌱🔪</span> Plant Based Food
           </Pill>
           <Pill>
-            <span role="img">⛺🥾⛰</span> Outdoors and nature
+            <span role="img">🌳🥾⛰</span> Environment & Nature
           </Pill>
           <Pill>
-            <span role="img">🎮</span> Platformer
+            <span role="img">📚</span> Polymath, Autodidact & Self Developer
+          </Pill>
+          <Pill>
+            <span role="img">🧳🗺️</span> Traveller, Explorer & Experience Seeker
+          </Pill>
+          <Pill>
+            <span role="img">🗳️🪧</span> Progressive & Egalitarian
+          </Pill>
+          <Pill>
+            <span role="img">🧘☯️☸️</span> Meditation, Spirituality & Buddhism
+          </Pill>
+          <Pill>
+            <span role="img">🎮</span> Platformer & SMW Kaizo
           </Pill>
         </PillContainer>
         <Container>
@@ -154,7 +172,7 @@ const IndexPage = () => {
               Email
             </Typography>
           </Link>
-          <Link
+          {/* <Link
             ariaLabel="C.V"
             href="https://drive.google.com/file/d/1wTm111usGm_NM2cQ6K7EhO9XNLEGJReL/view?usp=sharing"
             eventLabel="C.V Link"
@@ -162,7 +180,7 @@ const IndexPage = () => {
             <Typography align="center" variant="link">
               C.V
             </Typography>
-          </Link>
+          </Link> */}
           <Link
             ariaLabel="LinkedIn"
             href="https://www.linkedin.com/in/matt-fowles/"
@@ -190,7 +208,7 @@ const IndexPage = () => {
               Twitter
             </Typography>
           </Link>
-          <Link
+          {/* <Link
             ariaLabel="Node package manager"
             href="https://www.npmjs.com/~matthewfowles"
             eventLabel="NPM Link"
@@ -198,7 +216,7 @@ const IndexPage = () => {
             <Typography align="center" variant="link">
               NPM
             </Typography>
-          </Link>
+          </Link> */}
           <Link
             ariaLabel="Instagram"
             href="https://www.instagram.com/mattfowlesnomad/"
