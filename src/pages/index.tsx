@@ -119,17 +119,6 @@ const IndexPage = () => {
             (He / Him, They / Them)
           </Typography>
           <Typography align="center" variant="heading2" as="h2">
-            Head of Product Experience&nbsp;
-            <Link
-              ariaLabel="Rvvup"
-              eventLabel="Rvvup Link"
-              href="https://rvvup.com"
-              inline
-            >
-              @RVUUP
-            </Link>
-          </Typography>
-          <Typography align="center" variant="heading2" as="h2">
             Product Manager & Software Engineer
           </Typography>
           <Typography align="center" variant="heading2" as="h2">
