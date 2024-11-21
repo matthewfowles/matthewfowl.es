@@ -5,5 +5,6 @@ export const darkTheme = createTheme("dark-theme", {
     backgroundColor: "hsl(0deg 0% 27%)",
     textColor: "#ffffff",
     linkColor: "hsl(220deg 100% 80%)",
+    borderColor: "hsl(0deg 0% 26%)",
   },
 });

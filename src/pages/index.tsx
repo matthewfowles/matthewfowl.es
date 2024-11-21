@@ -115,42 +115,13 @@ const IndexPage = () => {
           <Typography align="center" variant="heading1" as="h1">
             Matt Fowles
           </Typography>
-          <Typography align="center" variant="body" as="h3">
-            (He / Him, They / Them)
-          </Typography>
           <Typography align="center" variant="heading2" as="h2">
             Product Manager & Software Engineer
           </Typography>
           <Typography align="center" variant="heading2" as="h2">
-            Digital Nomad, Remote Worldwide <span role="img">󠁧󠁢🌎</span>
+            Digital Nomad, Remote Europe <span role="img">󠁧󠁢🌍</span>
           </Typography>
         </Header>
-        <PillContainer>
-          <Pill>
-            <span role="img">🔥</span> Startup UX, UI, DX &amp; Engineering
-          </Pill>
-          <Pill>
-            <span role="img">🌱🔪</span> Plant Based Food
-          </Pill>
-          <Pill>
-            <span role="img">🌳🥾⛰</span> Environment & Nature
-          </Pill>
-          <Pill>
-            <span role="img">📚</span> Polymath, Autodidact & Self Developer
-          </Pill>
-          <Pill>
-            <span role="img">🧳🗺️</span> Traveller, Explorer & Experience Seeker
-          </Pill>
-          <Pill>
-            <span role="img">🗳️🪧</span> Progressive & Egalitarian
-          </Pill>
-          <Pill>
-            <span role="img">🧘☯️☸️</span> Meditation, Spirituality & Buddhism
-          </Pill>
-          <Pill>
-            <span role="img">🎮</span> Platformer & SMW Kaizo
-          </Pill>
-        </PillContainer>
         <Container>
           <Link
             ariaLabel="email"
@@ -161,15 +132,6 @@ const IndexPage = () => {
               Email
             </Typography>
           </Link>
-          {/* <Link
-            ariaLabel="C.V"
-            href="https://drive.google.com/file/d/1wTm111usGm_NM2cQ6K7EhO9XNLEGJReL/view?usp=sharing"
-            eventLabel="C.V Link"
-          >
-            <Typography align="center" variant="link">
-              C.V
-            </Typography>
-          </Link> */}
           <Link
             ariaLabel="LinkedIn"
             href="https://www.linkedin.com/in/matt-fowles/"
@@ -189,23 +151,14 @@ const IndexPage = () => {
             </Typography>
           </Link>
           <Link
-            ariaLabel="Twitter"
-            href="https://twitter.com/matthewfowles"
-            eventLabel="Twitter Link"
+            ariaLabel="X"
+            href="https://x.com/matthewfowles"
+            eventLabel="X Link"
           >
             <Typography align="center" variant="link">
-              Twitter
+              X
             </Typography>
           </Link>
-          {/* <Link
-            ariaLabel="Node package manager"
-            href="https://www.npmjs.com/~matthewfowles"
-            eventLabel="NPM Link"
-          >
-            <Typography align="center" variant="link">
-              NPM
-            </Typography>
-          </Link> */}
           <Link
             ariaLabel="Instagram"
             href="https://www.instagram.com/mattfowlesnomad/"
@@ -213,24 +166,6 @@ const IndexPage = () => {
           >
             <Typography align="center" variant="link">
               Instagram
-            </Typography>
-          </Link>
-          <Link
-            ariaLabel="Goodreads"
-            href="https://www.goodreads.com/user/show/73524230-matt-fowles"
-            eventLabel="Goodreads Link"
-          >
-            <Typography align="center" variant="link">
-              Goodreads
-            </Typography>
-          </Link>
-          <Link
-            ariaLabel="Spotify"
-            href="https://open.spotify.com/user/11124824682?si=428ab6e5baa948a5"
-            eventLabel="Spotify Link"
-          >
-            <Typography align="center" variant="link">
-              Spotify
             </Typography>
           </Link>
         </Container>

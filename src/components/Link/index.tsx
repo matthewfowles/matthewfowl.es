@@ -16,7 +16,7 @@ const ExternalLink = styled("a", {
   display: "inline-block",
   position: "relative",
   outline: "none",
-  margin: `${spacing(1)} ${spacing(2)}`,
+  margin: `${spacing(2)} ${spacing(2)}`,
   minWidth: sizing(44),
   textAlign: "center",
 

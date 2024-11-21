@@ -44,6 +44,8 @@ export const { styled, css, getCssText, globalCss, createTheme } =
         backgroundColor: "#ffffff",
         textColor: "hsl(0deg 0% 27%)",
         linkColor: "hsl(250deg 100% 27%)",
+        transparent: "transparent",
+        borderColor: "hsl(0deg 0% 98%)",
       },
     },
     media: {
