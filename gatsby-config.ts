@@ -7,8 +7,6 @@ const config: GatsbyConfig = {
     description: "Software Engineer",
   },
   plugins: [
-    "gatsby-plugin-image",
-    "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     {
       resolve: `gatsby-plugin-splitbee`,
@@ -33,18 +31,6 @@ const config: GatsbyConfig = {
         },
       },
     },
-    "gatsby-plugin-mdx",
-    {
-      resolve: "gatsby-plugin-sharp",
-      options: {
-        defaults: {
-          quality: 70,
-          formats: ["webp", "avif"],
-          placeholder: "tracedSVG",
-        },
-      },
-    },
-    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -62,6 +48,12 @@ const config: GatsbyConfig = {
     `gatsby-plugin-remove-serviceworker`,
     `gatsby-plugin-netlify`,
     "gatsby-plugin-robots-txt",
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: true,
+      },
+    },
   ],
 };
 

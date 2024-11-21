@@ -29,7 +29,7 @@ export default function HTML(props) {
         <meta property="og:site_name" content="Matt Fowles" />
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@mtthewfowles" />
+        <meta name="twitter:site" content="@matthewfowles" />
         <meta name="twitter:creator" content="@matthewfowles" />
         <meta name="twitter:url" content="https://mattfowl.es" />
         <meta name="twitter:title" content="Matt Fowles" />
