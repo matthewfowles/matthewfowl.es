@@ -8,6 +8,7 @@ import { darkTheme } from "../styles/themes/darkTheme";
 import { globalStyles } from "../styles/global";
 import { SunIcon, MoonIcon } from "@radix-ui/react-icons";
 import { Pill, PillContainer } from "../components/Pill";
+import { StaticImage } from "gatsby-plugin-image";
 
 globalStyles();
 
@@ -55,6 +56,12 @@ const ButtonContainer = styled("div", {
   right: spacing(1),
   top: spacing(1),
   display: "flex",
+});
+
+const ImageWrapper = styled("div", {
+  maxWidth: sizing(210),
+  width: "100%",
+  marginBottom: spacing(2),
 });
 
 const IndexPage = () => {
@@ -111,7 +118,15 @@ const IndexPage = () => {
               {theme === "light" && <SunIcon width={24} height={24} />}
             </Button>
           </ButtonContainer>
-          <Avatar />
+          <ImageWrapper>
+            <StaticImage
+              src="../images/p-avatar.png"
+              alt="Matt Fowles"
+              width={210}
+              height={210}
+              placeholder="blurred"
+            />
+          </ImageWrapper>
           <Typography align="center" variant="heading1" as="h1">
             Matt Fowles
           </Typography>

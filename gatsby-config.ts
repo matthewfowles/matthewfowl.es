@@ -8,6 +8,9 @@ const config: GatsbyConfig = {
   },
   plugins: [
     "gatsby-plugin-sitemap",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: `gatsby-plugin-splitbee`,
       options: {
