@@ -131,7 +131,7 @@ const IndexPage = () => {
             Matt Fowles
           </Typography>
           <Typography align="center" variant="heading2" as="h2">
-            Product Manager & Software Engineer
+            Creative Technologist & Product Engineer
           </Typography>
           <Typography align="center" variant="heading2" as="h2">
             Digital Nomad, Remote Europe <span role="img">󠁧󠁢🌍</span>

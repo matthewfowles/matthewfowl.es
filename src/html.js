@@ -33,7 +33,10 @@ export default function HTML(props) {
         <meta name="twitter:creator" content="@matthewfowles" />
         <meta name="twitter:url" content="https://mattfowl.es" />
         <meta name="twitter:title" content="Matt Fowles" />
-        <meta name="twitter:description" content="Software Engineer" />
+        <meta
+          name="twitter:description"
+          content="Creative Technologist & Product Engineer"
+        />
         <meta
           name="twitter:image"
           content="https://mattfowl.es/assets/apple-touch-icon-1024x1024.png"
