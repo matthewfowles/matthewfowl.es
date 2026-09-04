@@ -12,14 +12,6 @@ const config: GatsbyConfig = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
-      resolve: `gatsby-plugin-splitbee`,
-      options: {
-        includeInDevelopment: false,
-        delayTimeout: 0,
-        disableCookie: true,
-      },
-    },
-    {
       resolve: "gatsby-plugin-manifest",
       options: {
         name: "Matt Fowles",
@@ -49,7 +41,6 @@ const config: GatsbyConfig = {
       },
     },
     `gatsby-plugin-remove-serviceworker`,
-    `gatsby-plugin-netlify`,
     "gatsby-plugin-robots-txt",
     {
       resolve: `gatsby-plugin-purgecss`,

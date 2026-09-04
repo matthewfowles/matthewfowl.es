@@ -9,6 +9,8 @@ import { globalStyles } from "../styles/global";
 import { SunIcon, MoonIcon } from "@radix-ui/react-icons";
 import { Pill, PillContainer } from "../components/Pill";
 import { StaticImage } from "gatsby-plugin-image";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 globalStyles();
 
@@ -111,8 +113,6 @@ const IndexPage = () => {
             <Button
               onClick={toggleTheme}
               aria-label="Change theme"
-              data-splitbee-event="Change theme"
-              data-splitbee-event-theme={theme}
             >
               {theme === "dark" && <MoonIcon width={24} height={24} />}
               {theme === "light" && <SunIcon width={24} height={24} />}
@@ -185,6 +185,8 @@ const IndexPage = () => {
           </Link>
         </Container>
       </Main>
+      <Analytics />
+      <SpeedInsights />
     </>
   );
 };
