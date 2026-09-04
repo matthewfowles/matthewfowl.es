@@ -35,17 +35,21 @@ export default function Home() {
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-4 relative">
-      <button
-        onClick={toggleTheme}
-        aria-label="Toggle theme"
-        className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-      >
-        {theme === "dark" ? (
-          <MoonIcon className="w-6 h-6" />
-        ) : (
-          <SunIcon className="w-6 h-6" />
-        )}
-      </button>
+      <div className="absolute top-4 right-4">
+        <button
+          onClick={toggleTheme}
+          aria-label="Toggle theme"
+          className="theme-toggle"
+        >
+          <div className={`theme-toggle-slider ${theme === "dark" ? "dark" : ""}`}>
+            {theme === "dark" ? (
+              <MoonIcon />
+            ) : (
+              <SunIcon />
+            )}
+          </div>
+        </button>
+      </div>
 
       <div className="flex flex-col items-center justify-center max-w-2xl w-full space-y-8">
         <div className="flex flex-col items-center space-y-4">

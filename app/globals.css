@@ -87,6 +87,45 @@ body {
   width: 100%;
 }
 
+.theme-toggle {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  background: var(--border-color);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: 2px solid var(--text-color);
+}
+
+.theme-toggle:hover {
+  opacity: 0.8;
+}
+
+.theme-toggle-slider {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  background: var(--text-color);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--background);
+}
+
+.theme-toggle-slider.dark {
+  transform: translateX(30px);
+}
+
+.theme-toggle-slider svg {
+  width: 14px;
+  height: 14px;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
