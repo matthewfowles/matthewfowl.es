@@ -70,10 +70,11 @@ export default function Home() {
           </div>
         </div>
 
-        <nav className="flex flex-wrap items-center justify-center gap-4 pt-4">
+        <nav className="flex flex-wrap items-center justify-center pt-4">
           <a
             href="mailto:matt@matthewfowles.io"
-            className="px-4 py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+            className="social-link"
+            aria-label="email"
           >
             Email
           </a>
@@ -81,7 +82,8 @@ export default function Home() {
             href="https://www.linkedin.com/in/matt-fowles"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+            className="social-link"
+            aria-label="LinkedIn"
           >
             LinkedIn
           </a>
@@ -89,15 +91,17 @@ export default function Home() {
             href="https://github.com/matthewfowles"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+            className="social-link"
+            aria-label="GitHub"
           >
-            GitHub
+            Github
           </a>
           <a
             href="https://x.com/matthewfowles"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+            className="social-link"
+            aria-label="X"
           >
             X
           </a>
@@ -105,7 +109,8 @@ export default function Home() {
             href="https://www.instagram.com/mattfowlesnomad/"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+            className="social-link"
+            aria-label="Instagram"
           >
             Instagram
           </a>
