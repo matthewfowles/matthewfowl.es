@@ -64,13 +64,24 @@ export default function Home() {
           
           <div className="space-y-2 text-center">
             <h2 className="text-[20px] md:text-[28px] font-light tracking-[2px]">
-              AI-Powered Product Engineer
+              Building Production AI Agents
             </h2>
             <h2 className="text-[20px] md:text-[28px] font-light tracking-[2px]">
-              Shipping Agentic Applications
+              Autonomous Systems That Ship Real Value
             </h2>
             <h2 className="text-[20px] md:text-[28px] font-light tracking-[2px]">
-              Digital Nomad, Remote Europe 🌍
+              <a 
+                href="https://flumin.io" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="underline hover:opacity-80 transition-opacity"
+              >
+                Flumin
+              </a>
+              {" "}→ Legal-Tech Platform Removing Admin via AI
+            </h2>
+            <h2 className="text-[20px] md:text-[28px] font-light tracking-[2px]">
+              Remote Europe 🌍
             </h2>
           </div>
         </div>

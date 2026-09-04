@@ -4,9 +4,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Matt Fowles",
-  description: "Product engineer building AI-powered applications",
-  keywords: ["AI engineering", "product engineering", "agentic systems", "autonomous applications"],
+  title: "Matt Fowles - Building Production AI Agents",
+  description: "Building autonomous AI agents and agentic systems that ship real production value. Creator of Flumin legal-tech platform.",
+  keywords: ["AI agents", "agentic systems", "autonomous AI", "production AI", "AI engineering", "LLM applications", "agent workflows"],
   authors: [{ name: "Matt Fowles", url: "https://mattfowl.es" }],
   openGraph: {
     title: "Matt Fowles",
