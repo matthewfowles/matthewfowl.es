@@ -6,19 +6,41 @@
   --background: #ffffff;
   --text-color: hsl(0deg 0% 27%);
   --link-color: hsl(250deg 100% 27%);
+  --border-color: hsl(0deg 0% 98%);
 }
 
 html.dark {
   --background: hsl(0deg 0% 27%);
   --text-color: #ffffff;
   --link-color: hsl(220deg 100% 80%);
+  --border-color: hsl(0deg 0% 26%);
+}
+
+* {
+  box-sizing: border-box;
+  transition: color 0.4s ease, border-color 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+*::selection {
+  color: var(--background);
+  background: var(--text-color);
 }
 
 body {
+  font-family: 'Teko', sans-serif;
   color: var(--text-color);
-  background: var(--background);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: center;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  background: radial-gradient(circle farthest-side at 0% 50%, var(--background) 23.5%, transparent 0) 42px 60px,
+              radial-gradient(circle farthest-side at 0% 50%, var(--border-color, hsl(0deg 0% 98%)) 24%, transparent 0) 38px 60px,
+              linear-gradient(var(--background) 14%, transparent 0, transparent 85%, var(--background) 0) 0 0,
+              linear-gradient(150deg, var(--background) 24%, var(--border-color, hsl(0deg 0% 98%)) 0, var(--border-color, hsl(0deg 0% 98%)) 26%, transparent 0, transparent 74%, var(--border-color, hsl(0deg 0% 98%)) 0, var(--border-color, hsl(0deg 0% 98%)) 76%, var(--background) 0) 0 0,
+              linear-gradient(30deg, var(--background) 24%, var(--border-color, hsl(0deg 0% 98%)) 0, var(--border-color, hsl(0deg 0% 98%)) 26%, transparent 0, transparent 74%, var(--border-color, hsl(0deg 0% 98%)) 0, var(--border-color, hsl(0deg 0% 98%)) 76%, var(--background) 0) 0 0,
+              linear-gradient(90deg, var(--border-color, hsl(0deg 0% 98%)) 2%, var(--background) 0, var(--background) 98%, var(--border-color, hsl(0deg 0% 98%)) 0) 0 0 var(--background);
+  background-size: 80px 120px;
 }
 
 .social-link {

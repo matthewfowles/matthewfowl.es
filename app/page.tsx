@@ -58,15 +58,20 @@ export default function Home() {
             className="rounded-full"
           />
           
-          <h1 className="text-4xl font-bold text-center">Matt Fowles</h1>
+          <h1 className="text-[40px] md:text-[56px] font-medium tracking-[4px] leading-8 md:leading-[4rem] mb-2">
+            Matt Fowles
+          </h1>
           
           <div className="space-y-2 text-center">
-            <h2 className="text-xl text-gray-600 dark:text-gray-400">
-              Creative Technologist & Product Engineer
+            <h2 className="text-[20px] md:text-[28px] font-light tracking-[2px]">
+              AI-Powered Product Engineer
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400">
+            <h2 className="text-[20px] md:text-[28px] font-light tracking-[2px]">
+              Shipping Agentic Applications
+            </h2>
+            <h2 className="text-[20px] md:text-[28px] font-light tracking-[2px]">
               Digital Nomad, Remote Europe 🌍
-            </p>
+            </h2>
           </div>
         </div>
 

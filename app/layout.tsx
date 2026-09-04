@@ -5,7 +5,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Matt Fowles",
-  description: "AI-assisted product engineer shipping production apps with autonomous systems",
+  description: "Product engineer building AI-powered applications",
   keywords: ["AI engineering", "product engineering", "agentic systems", "autonomous applications"],
   authors: [{ name: "Matt Fowles", url: "https://mattfowl.es" }],
   openGraph: {
@@ -35,7 +35,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500&display=swap" rel="stylesheet" />
+      </head>
+      <body>
         {children}
         <Analytics />
         <SpeedInsights />
