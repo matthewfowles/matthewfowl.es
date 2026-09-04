@@ -62,25 +62,10 @@ export default function Home() {
           
           <div className="space-y-2 text-center">
             <h2 className="text-xl text-gray-600 dark:text-gray-400">
-              AI-Assisted Product Engineer
+              Creative Technologist & Product Engineer
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400">
-              Shipping production apps with autonomous systems
-            </p>
-            <p className="text-base text-gray-500 dark:text-gray-500">
-              Building{" "}
-              <a 
-                href="https://flumin.io" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="underline hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
-              >
-                Flumin
-              </a>
-              {" "}— legal-tech platform where AI removes real admin
-            </p>
-            <p className="text-base text-gray-500 dark:text-gray-500">
-              UK citizen in Albania, remote Europe 🌍
+              Digital Nomad, Remote Europe 🌍
             </p>
           </div>
         </div>
