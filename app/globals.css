@@ -4,21 +4,40 @@
 
 :root {
   --background: #ffffff;
+  --foreground: hsl(0deg 0% 27%);
   --text-color: hsl(0deg 0% 27%);
   --link-color: hsl(250deg 100% 27%);
   --border-color: hsl(0deg 0% 98%);
+  --ds-background-100: #ffffff;
+  --ds-gray-400: hsl(0deg 0% 82%);
+  --ds-gray-500: hsl(0deg 0% 64%);
+  --ds-gray-700: hsl(0deg 0% 40%);
+  --ds-gray-1000: hsl(0deg 0% 13%);
+  --ds-gray-alpha-100: hsl(0deg 0% 0% / 0.08);
+  --ds-shadow-border: 0 0 0 1px hsl(0deg 0% 0% / 0.14);
+  --ds-focus-ring: 0 0 0 2px var(--background), 0 0 0 4px hsl(250deg 100% 27% / 0.45);
+  color-scheme: light;
 }
 
 html.dark {
   --background: hsl(0deg 0% 27%);
+  --foreground: #ffffff;
   --text-color: #ffffff;
   --link-color: hsl(220deg 100% 80%);
   --border-color: hsl(0deg 0% 26%);
+  --ds-background-100: hsl(0deg 0% 22%);
+  --ds-gray-400: hsl(0deg 0% 46%);
+  --ds-gray-500: hsl(0deg 0% 52%);
+  --ds-gray-700: hsl(0deg 0% 72%);
+  --ds-gray-1000: #ffffff;
+  --ds-gray-alpha-100: hsl(0deg 0% 100% / 0.1);
+  --ds-shadow-border: 0 0 0 1px hsl(0deg 0% 100% / 0.18);
+  --ds-focus-ring: 0 0 0 2px var(--background), 0 0 0 4px hsl(220deg 100% 80% / 0.55);
+  color-scheme: dark;
 }
 
 * {
   box-sizing: border-box;
-  transition: color 0.4s ease, border-color 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 *::selection {
@@ -85,45 +104,6 @@ body {
 .social-link:hover::after,
 .social-link:focus::before {
   width: 100%;
-}
-
-.theme-toggle {
-  position: relative;
-  width: 60px;
-  height: 30px;
-  background: var(--border-color);
-  border-radius: 30px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  border: 2px solid var(--text-color);
-}
-
-.theme-toggle:hover {
-  opacity: 0.8;
-}
-
-.theme-toggle-slider {
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 22px;
-  height: 22px;
-  background: var(--text-color);
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--background);
-}
-
-.theme-toggle-slider.dark {
-  transform: translateX(30px);
-}
-
-.theme-toggle-slider svg {
-  width: 14px;
-  height: 14px;
 }
 
 @layer utilities {

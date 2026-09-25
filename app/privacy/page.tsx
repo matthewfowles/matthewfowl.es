@@ -33,7 +33,7 @@ export default function Privacy() {
           <section>
             <h2 className="text-[28px] font-medium tracking-[2px] mb-3">Cookies</h2>
             <p>
-              This site uses localStorage to remember your dark/light theme preference. This is stored locally in 
+              This site uses localStorage to remember your theme preference (light, dark, or your system setting). This is stored locally in 
               your browser and is not transmitted to any server. No tracking cookies are used.
             </p>
           </section>

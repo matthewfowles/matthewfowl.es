@@ -1,54 +1,11 @@
-"use client";
-
 import Image from "next/image";
-import { useState, useEffect } from "react";
-import { SunIcon, MoonIcon } from "@radix-ui/react-icons";
+import { ThemeSwitcher } from "@/components/theme-switcher";
 
 export default function Home() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
-    } else if (savedTheme === "light") {
-      setTheme("light");
-      document.documentElement.classList.remove("dark");
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-    
-    if (newTheme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  };
-
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-4 relative">
       <div className="absolute top-4 right-4">
-        <button
-          onClick={toggleTheme}
-          aria-label="Toggle theme"
-          className="theme-toggle"
-        >
-          <div className={`theme-toggle-slider ${theme === "dark" ? "dark" : ""}`}>
-            {theme === "dark" ? (
-              <MoonIcon />
-            ) : (
-              <SunIcon />
-            )}
-          </div>
-        </button>
+        <ThemeSwitcher />
       </div>
 
       <div className="flex flex-col items-center justify-center max-w-2xl w-full space-y-8">
