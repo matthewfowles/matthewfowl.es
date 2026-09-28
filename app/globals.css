@@ -8,6 +8,10 @@
   --text-color: hsl(0deg 0% 27%);
   --link-color: hsl(250deg 100% 27%);
   --border-color: hsl(0deg 0% 98%);
+  --hex-line: hsl(0deg 0% 96%);
+  --hex-glow: #f79d00;
+  --hex-glow-end: #64f38c;
+  --hex-glow-hot: #ffb703;
   --ds-background-100: #ffffff;
   --ds-gray-400: hsl(0deg 0% 82%);
   --ds-gray-500: hsl(0deg 0% 64%);
@@ -25,6 +29,10 @@ html.dark {
   --text-color: #ffffff;
   --link-color: hsl(220deg 100% 80%);
   --border-color: hsl(0deg 0% 26%);
+  --hex-line: hsl(0deg 0% 30%);
+  --hex-glow: #eecda3;
+  --hex-glow-end: #ef629f;
+  --hex-glow-hot: #f6e0c4;
   --ds-background-100: hsl(0deg 0% 22%);
   --ds-gray-400: hsl(0deg 0% 46%);
   --ds-gray-500: hsl(0deg 0% 52%);
@@ -46,20 +54,19 @@ html.dark {
 }
 
 body {
-  font-family: 'Teko', sans-serif;
+  font-family: var(--font-geist), sans-serif;
   color: var(--text-color);
   text-align: center;
   margin: 0;
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: 2px;
-  background: radial-gradient(circle farthest-side at 0% 50%, var(--background) 23.5%, transparent 0) 42px 60px,
-              radial-gradient(circle farthest-side at 0% 50%, var(--border-color, hsl(0deg 0% 98%)) 24%, transparent 0) 38px 60px,
-              linear-gradient(var(--background) 14%, transparent 0, transparent 85%, var(--background) 0) 0 0,
-              linear-gradient(150deg, var(--background) 24%, var(--border-color, hsl(0deg 0% 98%)) 0, var(--border-color, hsl(0deg 0% 98%)) 26%, transparent 0, transparent 74%, var(--border-color, hsl(0deg 0% 98%)) 0, var(--border-color, hsl(0deg 0% 98%)) 76%, var(--background) 0) 0 0,
-              linear-gradient(30deg, var(--background) 24%, var(--border-color, hsl(0deg 0% 98%)) 0, var(--border-color, hsl(0deg 0% 98%)) 26%, transparent 0, transparent 74%, var(--border-color, hsl(0deg 0% 98%)) 0, var(--border-color, hsl(0deg 0% 98%)) 76%, var(--background) 0) 0 0,
-              linear-gradient(90deg, var(--border-color, hsl(0deg 0% 98%)) 2%, var(--background) 0, var(--background) 98%, var(--border-color, hsl(0deg 0% 98%)) 0) 0 0 var(--background);
-  background-size: 80px 120px;
+  background: var(--background);
+}
+
+h1,
+h2,
+.social-link {
+  font-family: "Teko", sans-serif;
 }
 
 .social-link {
@@ -104,6 +111,96 @@ body {
 .social-link:hover::after,
 .social-link:focus::before {
   width: 100%;
+}
+
+.social-link:has(.social-hex) {
+  margin-top: 0;
+  margin-inline: 22px;
+}
+
+.social-link:has(.social-hex)::before,
+.social-link:has(.social-hex)::after {
+  display: none;
+}
+
+.social-link svg:not(.social-hex) {
+  display: block;
+  margin: 6px auto;
+}
+
+.social-hex {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 72px;
+  height: 72px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  overflow: visible;
+  color: var(--link-color);
+}
+
+.social-hex-solid,
+.social-hex-dashed,
+.social-hex-draw {
+  fill: none;
+  stroke-linejoin: round;
+}
+
+.social-hex-solid,
+.social-hex-dashed {
+  stroke: currentColor;
+  stroke-width: 2.75;
+}
+
+.social-hex-solid,
+.social-hex-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 0.55s ease;
+}
+
+.social-hex-draw {
+  stroke: #fff;
+  stroke-width: 4;
+}
+
+.social-hex-dashed {
+  stroke-dasharray: 4 3;
+  opacity: 0;
+}
+
+.social-link:hover .social-hex-solid {
+  stroke-dashoffset: 0;
+}
+
+.social-link:focus-visible .social-hex-dashed {
+  opacity: 1;
+}
+
+.social-link:focus-visible .social-hex-draw {
+  stroke-dashoffset: 0;
+}
+
+.rise-line {
+  animation: rise-line 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+@keyframes rise-line {
+  from {
+    opacity: 0;
+    transform: translateY(0.35em);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise-line {
+    animation: none;
+  }
 }
 
 @layer utilities {

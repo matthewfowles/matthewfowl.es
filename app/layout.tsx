@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
+import { Geist } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { HexagonBackground } from "@/components/hexagon-background";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
+
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Matt Fowles",
@@ -47,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={geist.variable} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -81,7 +89,8 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeProvider>
-          {children}
+          <HexagonBackground />
+          <div className="relative z-10">{children}</div>
           <Analytics />
           <SpeedInsights />
         </ThemeProvider>
