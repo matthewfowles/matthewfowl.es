@@ -1,0 +1,42 @@
+# Matt Fowles
+
+> Product creator and builder with a fintech and martech background. Based in Albania, working across Continental Europe in English.
+
+Matt Fowles (https://mattfowl.es) is a product creator and builder. His background is in fintech and martech.
+
+He builds web, mobile, desktop, internal tools, and AI built into products.
+
+He is based in Albania and works across Continental Europe in English.
+
+[Flumin](https://flumin.io) is his legal-tech platform.
+
+There is no contact form and no phone number on the site. Make contact with a written enquiry to POST https://mattfowl.es/api/contact
+
+The route accepts `application/json` or a form post. Fields:
+
+- name (required)
+- email (required)
+- company (optional)
+- message (required)
+
+A successful enquiry returns `{ "ok": true }`.
+
+## Profiles
+
+- Email: matt@matthewfowles.io
+- [LinkedIn](https://www.linkedin.com/in/matt-fowles)
+- [GitHub](https://github.com/matthewfowles)
+- [X](https://x.com/matthewfowles)
+- [Instagram](https://www.instagram.com/mattfowlesnomad/)
+
+## Languages
+
+- [English](https://mattfowl.es/): default. URLs have no language prefix. `/en` redirects here.
+- [Shqip](https://mattfowl.es/sq): Albanian. URLs use the `/sq` prefix.
+
+## Pages
+
+- [Home](https://mattfowl.es/): Profile, what he builds, and links to get in touch.
+- [Home (Shqip)](https://mattfowl.es/sq): Albanian homepage.
+- [Agent card](https://mattfowl.es/.well-known/agent.json): Name, services, and the contact endpoint.
+- [Sitemap](https://mattfowl.es/sitemap.xml): Public pages in both languages.

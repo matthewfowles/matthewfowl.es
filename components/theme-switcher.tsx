@@ -40,12 +40,21 @@ const icons: Record<ThemeValue, React.ReactNode> = {
   ),
 };
 
+const defaultLabels = {
+  legend: "Select a display theme:",
+  system: "system",
+  light: "light",
+  dark: "dark",
+};
+
 export function ThemeSwitcher({
   small = false,
   disabled = false,
+  labels = defaultLabels,
 }: {
   small?: boolean;
   disabled?: boolean;
+  labels?: typeof defaultLabels;
 }) {
   const id = useId();
   const { theme, setTheme, forcedTheme } = useTheme();
@@ -58,11 +67,11 @@ export function ThemeSwitcher({
       data-small={small ? "" : undefined}
       disabled={isDisabled}
     >
-      <legend className="sr-only">Select a display theme:</legend>
+      <legend className="sr-only">{labels.legend}</legend>
       {themes.map((value) => (
         <span key={value} className="relative h-full">
           <input
-            aria-label={value}
+            aria-label={labels[value]}
             className="appearance-none p-0 m-0 outline-none absolute inset-0 opacity-0 peer"
             id={`theme-switch-${value}-${id}`}
             name={`theme-${id}`}
@@ -81,7 +90,7 @@ export function ThemeSwitcher({
             data-small={small ? "" : undefined}
             htmlFor={`theme-switch-${value}-${id}`}
           >
-            <span className="sr-only">{value}</span>
+            <span className="sr-only">{labels[value]}</span>
             <span className="relative z-[1] size-4">{icons[value]}</span>
           </label>
         </span>

@@ -12,6 +12,7 @@
   --hex-glow: #f79d00;
   --hex-glow-end: #64f38c;
   --hex-glow-hot: #ffb703;
+  --hex-spark: #2bbdb8;
   --ds-background-100: #ffffff;
   --ds-gray-400: hsl(0deg 0% 82%);
   --ds-gray-500: hsl(0deg 0% 64%);
@@ -33,6 +34,7 @@ html.dark {
   --hex-glow: #eecda3;
   --hex-glow-end: #ef629f;
   --hex-glow-hot: #f6e0c4;
+  --hex-spark: #c6d453;
   --ds-background-100: hsl(0deg 0% 22%);
   --ds-gray-400: hsl(0deg 0% 46%);
   --ds-gray-500: hsl(0deg 0% 52%);

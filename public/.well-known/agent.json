@@ -1,0 +1,23 @@
+{
+  "name": "Matt Fowles",
+  "url": "https://mattfowl.es",
+  "description": "Product creator and builder with a fintech and martech background. Builds web, mobile, desktop, internal tools, and AI built into products. Based in Albania and works across Continental Europe in English.",
+  "services": [
+    "Web",
+    "Mobile",
+    "Desktop",
+    "Internal tools",
+    "AI built into products"
+  ],
+  "contact": {
+    "url": "https://mattfowl.es/api/contact",
+    "method": "POST",
+    "contentTypes": ["application/json", "application/x-www-form-urlencoded", "multipart/form-data"],
+    "fields": {
+      "name": { "type": "string", "required": true },
+      "email": { "type": "string", "format": "email", "required": true },
+      "company": { "type": "string", "required": false },
+      "message": { "type": "string", "required": true }
+    }
+  }
+}
