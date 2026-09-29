@@ -380,20 +380,55 @@ export function HexagonBackground() {
       frame = requestAnimationFrame(step);
     };
 
-    const onMouseMove = (event: MouseEvent) => {
+    let touchId: number | null = null;
+    let ignoreMouseUntil = 0;
+
+    const place = (x: number, y: number) => {
       lastMove = performance.now();
       strength = 1;
-      pointer = { x: event.clientX, y: event.clientY };
+      pointer = { x, y };
       if (!trailReady) follow(1 / 60);
       stamp();
       paint();
       ensureFrame();
     };
 
-    const onMouseLeave = () => {
+    const clearPointer = () => {
       pointer = null;
       trailReady = false;
       ensureFrame();
+    };
+
+    const onPointerDown = (event: PointerEvent) => {
+      if (event.pointerType !== "touch") return;
+      if (touchId !== null) return;
+      touchId = event.pointerId;
+      ignoreMouseUntil = performance.now() + 700;
+      place(event.clientX, event.clientY);
+    };
+
+    const onPointerMove = (event: PointerEvent) => {
+      if (event.pointerType === "touch") {
+        if (event.pointerId !== touchId) return;
+        ignoreMouseUntil = performance.now() + 700;
+        place(event.clientX, event.clientY);
+        return;
+      }
+      if (performance.now() < ignoreMouseUntil) return;
+      place(event.clientX, event.clientY);
+    };
+
+    const onPointerEnd = (event: PointerEvent) => {
+      if (event.pointerType !== "touch" || event.pointerId !== touchId) return;
+      touchId = null;
+      ignoreMouseUntil = performance.now() + 700;
+      clearPointer();
+    };
+
+    const onPointerLeave = (event: PointerEvent) => {
+      if (event.pointerType === "touch") return;
+      if (performance.now() < ignoreMouseUntil) return;
+      clearPointer();
     };
 
     const onResize = () => {
@@ -412,8 +447,11 @@ export function HexagonBackground() {
     lastTime = performance.now();
     frame = requestAnimationFrame(step);
     window.addEventListener("resize", onResize);
-    window.addEventListener("mousemove", onMouseMove);
-    document.documentElement.addEventListener("mouseleave", onMouseLeave);
+    window.addEventListener("pointerdown", onPointerDown, { passive: true });
+    window.addEventListener("pointermove", onPointerMove, { passive: true });
+    window.addEventListener("pointerup", onPointerEnd);
+    window.addEventListener("pointercancel", onPointerEnd);
+    document.documentElement.addEventListener("pointerleave", onPointerLeave);
 
     const observer = new MutationObserver(() => {
       resize();
@@ -427,8 +465,11 @@ export function HexagonBackground() {
     return () => {
       if (frame) cancelAnimationFrame(frame);
       window.removeEventListener("resize", onResize);
-      window.removeEventListener("mousemove", onMouseMove);
-      document.documentElement.removeEventListener("mouseleave", onMouseLeave);
+      window.removeEventListener("pointerdown", onPointerDown);
+      window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("pointerup", onPointerEnd);
+      window.removeEventListener("pointercancel", onPointerEnd);
+      document.documentElement.removeEventListener("pointerleave", onPointerLeave);
       observer.disconnect();
     };
   }, []);

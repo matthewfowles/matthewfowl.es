@@ -50,8 +50,8 @@ export function LocaleSwitcher({
 }) {
   const path = barePath(pathname);
   const items = [
-    { locale: "en" as const, href: path === "/" ? "/en" : `/en${path}`, name: english, code: "EN" },
-    { locale: "sq" as const, href: localePath("sq", path), name: albanian, code: "SQ" },
+    { locale: "en" as const, href: path === "/" ? "/en" : `/en${path}`, name: english },
+    { locale: "sq" as const, href: localePath("sq", path), name: albanian },
   ];
 
   return (
@@ -63,7 +63,6 @@ export function LocaleSwitcher({
             key={item.locale}
             href={item.href}
             hrefLang={item.locale}
-            aria-label={item.name}
             aria-current={active ? "true" : undefined}
             className={
               active
@@ -72,7 +71,7 @@ export function LocaleSwitcher({
             }
           >
             <Flag locale={item.locale} />
-            <span className="text-xs font-medium tracking-normal">{item.code}</span>
+            <span className="text-xs font-medium tracking-normal">{item.name}</span>
           </a>
         );
       })}
